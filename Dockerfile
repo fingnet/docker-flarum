@@ -46,7 +46,9 @@ RUN echo "@community https://nl.alpinelinux.org/alpine/v3.7/community" >> /etc/a
  && mkdir -p /flarum/app \
  && chown -R $UID:$GID /flarum \
  && COMPOSER_CACHE_DIR="/tmp" su-exec $UID:$GID composer create-project flarum/flarum /flarum/app $VERSION --stability=beta \
+ && cd /flarum/app \
  && composer require jsthon/flarum-ext-simplified-chinese $VERSION \
+ && cd /tmp \
  && composer clear-cache \
  && rm -rf /flarum/.composer /var/cache/apk/*
 
