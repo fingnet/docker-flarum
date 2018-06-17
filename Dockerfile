@@ -9,7 +9,10 @@ ENV GID=991 \
     UID=991 \
     UPLOAD_MAX_SIZE=50M \
     PHP_MEMORY_LIMIT=128M \
-    OPCACHE_MEMORY_LIMIT=128
+    OPCACHE_MEMORY_LIMIT=128 \
+    FORUM_URL=localhost \
+    DB_HOST=localhost \
+    DB_PASS=password
 
 RUN echo "@community https://nl.alpinelinux.org/alpine/v3.7/community" >> /etc/apk/repositories \
  && apk add -U \
